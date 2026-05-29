@@ -1,0 +1,10 @@
+# Build output
+dist/
+
+# Old archive (superseded by GitHub Releases)
+*.7z
+
+# OS / editor junk
+Thumbs.db
+.DS_Store
+*.log

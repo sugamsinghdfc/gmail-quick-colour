@@ -1,0 +1,143 @@
+/* Quick Colour Extension Styles v2.3.2 (Compact Premium) */
+
+/* ===== Floating Toolbar (Apple-style pill) ===== */
+.qc-floating-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Compact gap */
+  padding: 6px 10px;
+  /* Reduced padding */
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-radius: 99px;
+  /* Pill shape */
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 10px 30px -5px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+
+  /* Initial state */
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  transition:
+    opacity 0.25s ease-out,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* iOS-like smooth spring */
+
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Dark mode support (if Gmail is dark) - we default to light/neutral glass that works on both */
+@media (prefers-color-scheme: dark) {
+  .qc-floating-bar {
+    background: rgba(40, 40, 40, 0.85);
+    box-shadow:
+      0 10px 40px -10px rgba(0, 0, 0, 0.5),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Visible state */
+.qc-floating-bar.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* ===== Color Buttons ===== */
+.qc-col-btn {
+  width: 22px;
+  /* Smaller buttons (was 26px) */
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+
+  /* Smooth transitions */
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Subtle depth */
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.15),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  /* Inner lip */
+}
+
+/* Hover state - Springy Pop */
+.qc-col-btn:hover {
+  transform: scale(1.25);
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+/* Active/Click state */
+.qc-col-btn:active {
+  transform: scale(0.92);
+}
+
+/* ===== Active/Feedback State ===== */
+.qc-col-btn.qc-success {
+  animation: successPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.qc-col-btn.qc-error {
+  animation: errorShake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* Success Animation: Ring Ripple */
+@keyframes successPop {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+  }
+
+  50% {
+    transform: scale(1.4);
+    box-shadow: 0 0 0 8px rgba(0, 255, 136, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+  }
+}
+
+@keyframes errorShake {
+
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(-3px);
+  }
+
+  40%,
+  60% {
+    transform: translateX(3px);
+  }
+}
+
+/* Focus for accessibility */
+.qc-col-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #007AFF, 0 0 0 4px white;
+  /* Apple blue ring */
+}

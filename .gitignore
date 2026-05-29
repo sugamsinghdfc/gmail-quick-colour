@@ -8,3 +8,6 @@ dist/
 Thumbs.db
 .DS_Store
 *.log
+
+# Local tooling
+.claude/

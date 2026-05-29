@@ -29,17 +29,17 @@ Open Gmail, compose an email, select some text, and the colour bar appears.
 
 | Colour | Shortcut |
 |--------|----------|
-| Blue   | `Ctrl+Shift+1` |
-| Green  | `Ctrl+Shift+2` |
-| Red    | `Ctrl+Shift+3` |
-| Orange | `Ctrl+Shift+4` |
+| Blue   | `Alt+1` |
+| Green  | `Alt+2` |
+| Red    | `Alt+3` |
+| Orange | `Alt+4` |
 | Grey   | *(set it yourself — see below)* |
 
 ### Setting the Grey shortcut (one-time)
 Chrome only auto-assigns **4** shortcuts per extension, so Grey needs a one-time manual key:
 1. Go to **`chrome://extensions/shortcuts`**
 2. Find **Quick Colour Buttons for Gmail → "Apply Grey Color"**
-3. Click the box and press **`Ctrl+Shift+5`** (or any key you like).
+3. Click the box and press **`Alt+5`** (or any key you like).
 
 The Grey **toolbar button** works instantly — only the keyboard shortcut needs this step.
 

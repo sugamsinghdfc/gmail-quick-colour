@@ -14,7 +14,7 @@ const COLOURS = [
 let floatingToolbar = null;
 let isInteractingWithToolbar = false;
 
-console.log('[Quick‑Colour] v2.4.1 active (Floating Mode, span-based colouring)');
+console.log('[Quick‑Colour] v2.4.2 active (Floating Mode, span-based colouring)');
 
 /**
  * Apply color to the currently selected text.
